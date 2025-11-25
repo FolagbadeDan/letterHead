@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap');
+
+/* Custom scrollbar for cleaner UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* A4 Paper Container - Pixel Perfect for Scaling */
+.a4-paper-container {
+  width: 794px; /* Standard A4 width at 96 DPI */
+  min-height: 1123px; /* Standard A4 height at 96 DPI */
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/* Print Optimization */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #print-area, #print-area * {
+    visibility: visible;
+  }
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    padding: 0 !important;
+  }
+}
